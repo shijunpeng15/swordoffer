@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 '''
     /*
          在一个二维数组中（每个一维数组的长度相同），每一行都按照从左到右递增的顺序排序，
@@ -16,3 +17,18 @@
          * 直至相等为止
          */
 '''
+
+
+class Solution:
+    def Find(self, target, array):
+        row = 0
+        col = len(array[0]) - 1
+        while row <= len(array) and col > 0:
+            if target == array[row][col]:
+                return True
+            elif target > array[row][col]:
+                row += 1
+            else:
+                col -= 1
+        return False
+
